@@ -22,5 +22,6 @@ and navigate to their purchase cart. Clients can update their data, register ord
 
 
 # Author
+Fabrício de Oliveira Pita
 
 https://www.linkedin.com/in/profissional-fabricio-oliveira/
