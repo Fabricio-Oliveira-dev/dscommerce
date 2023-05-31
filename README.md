@@ -13,6 +13,8 @@ and navigate to their purchase cart. Clients can update their data, register ord
 - Spring Data JPA
 - Bean validation
 - H2 database
+- Spring Security 
+- OAuth2/JWT
 
 # Database overview
 ![image](https://github.com/Fabricio-Oliveira-dev/dscommerce/assets/105288563/9843ad91-b440-4e71-aba6-e0c3e2845d25)
