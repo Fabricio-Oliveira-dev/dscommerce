@@ -1,7 +1,9 @@
 package com.devfabricio.dscommerce.services;
 
+import com.devfabricio.dscommerce.dto.CategoryDTO;
 import com.devfabricio.dscommerce.dto.ProductDTO;
 import com.devfabricio.dscommerce.dto.ProductMinDTO;
+import com.devfabricio.dscommerce.entities.Category;
 import com.devfabricio.dscommerce.entities.Product;
 import com.devfabricio.dscommerce.repositories.ProductRepository;
 import com.devfabricio.dscommerce.services.exceptions.DatabaseException;
@@ -74,5 +76,12 @@ public class ProductService {
         entity.setDescription(dto.getDescription());
         entity.setPrice(dto.getPrice());
         entity.setImgUrl(dto.getImgUrl());
+
+        entity.getCategories().clear();
+        for (CategoryDTO catDTO: dto.getCategories()) {
+            Category cat = new Category();
+            cat.setId(catDTO.getId());
+            entity.getCategories().add(cat);
+        }
     }
 }
