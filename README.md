@@ -1,33 +1,26 @@
 # About this project
 The system should maintain user enrollment, a product and its category. Each user has a name, email, phone number, date of birth and password. The product data are: name, description, price and image. The system should display
-a product catalog, which can be filtered by the product name. From this catalog, the user can select a product to see its details and choose whether to add it to the purchase cart. The user can include and remove itens from the
+a product catalog, which can be filtered by the product name. From this catalog, the user can select a product to see its details and choose whether to add it to the purchase cart. The user can include and remove items from the
 purchase cart, also alter the quantity of each item. Once the user has chosen to finish the order, this order should be saved in the system with the status "waiting payment". The order data are: Instant in which it was saved
 and an item list, where each item refers to one product and its quantity in the order. The order status can be: waiting payment, paid, shipped, delivered or canceled. When a user pays for an order, the payment instant may be
 registered. Users can be clients or administrators, while every user registered in the system is by default a client. Users who are not identified can register themselves on the system, navigate through the product catalog
 and navigate to their purchase cart. Clients can update their data, register orders and view their own orders. Administrators have access to the administrative area, where it is possible to access user, product and categories enrollments.
-<<<<<<< HEAD
-
-=======
->>>>>>> cd4c0ca3b902de2294ff562951b498c8046c408e
-
 
 ## Back End
 - Java
 - Spring Boot
 - Spring Data JPA
-<<<<<<< HEAD
 - Bean validation
 - H2 database (development/testing database)
 - Spring Security 
 - OAuth2/JWT
 - Postgresql (production database)
-=======
 - Spring Security 
 - OAuth2/JWT
 - Bean validation
 - H2
 - Postgresql
->>>>>>> cd4c0ca3b902de2294ff562951b498c8046c408e
+
 
 
 ## Database overview
@@ -78,6 +71,7 @@ and navigate to their purchase cart. Clients can update their data, register ord
 
 ### Log in form
 ***If the user tries to make the purchase without being logged in, the user is redirected to log in to the system.***
+
 ![image](https://github.com/Fabricio-Oliveira-dev/dscommerce/assets/105288563/4a70d04a-a442-46c1-bdd1-2f201488bd29)
 
 ### Ended order
