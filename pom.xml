@@ -81,6 +81,39 @@
 				<artifactId>maven-resources-plugin</artifactId>
 				<version>3.1.0</version>
 			</plugin>
+
+			<plugin>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.8.7</version>
+				<configuration>
+					<excludes>
+						<exclude>com/devfabricio/dscommerce/DscommerceApplication.class</exclude>
+						<exclude>com/devfabricio/dscommerce/config/**</exclude>
+						<exclude>com/devfabricio/dscommerce/entities/**</exclude>
+						<exclude>com/devfabricio/dscommerce/dto/**</exclude>
+						<exclude>com/devfabricio/dscommerce/controllers/handlers/**</exclude>
+						<exclude>com/devfabricio/dscommerce/services/exceptions/**</exclude>
+					</excludes>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+					<execution>
+						<id>jacoco-report</id>
+						<phase>prepare-package</phase>
+						<goals>
+							<goal>report</goal>
+						</goals>
+						<configuration>
+							<outputDirectory>target/jacoco-report</outputDirectory>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
 		</plugins>
 	</build>
 

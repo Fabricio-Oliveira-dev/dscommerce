@@ -5,16 +5,17 @@ purchase cart, also alter the quantity of each item. Once the user has chosen to
 and an item list, where each item refers to one product and its quantity in the order. The order status can be: waiting payment, paid, shipped, delivered or canceled. When a user pays for an order, the payment instant may be
 registered. Users can be clients or administrators, while every user registered in the system is by default a client. Users who are not identified can register themselves on the system, navigate through the product catalog
 and navigate to their purchase cart. Clients can update their data, register orders and view their own orders. Administrators have access to the administrative area, where it is possible to access user, product and categories enrollments.
-***This project is still being built***
+
 
 # Back End
 - Java
 - Spring Boot
 - Spring Data JPA
 - Bean validation
-- H2 database
+- H2 database (development/testing database)
 - Spring Security 
 - OAuth2/JWT
+- Postgresql (production database)
 
 # Database overview
 ![image](https://github.com/Fabricio-Oliveira-dev/dscommerce/assets/105288563/9843ad91-b440-4e71-aba6-e0c3e2845d25)
