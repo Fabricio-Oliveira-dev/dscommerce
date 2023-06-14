@@ -15,11 +15,8 @@ and navigate to their purchase cart. Clients can update their data, register ord
 - Spring Security 
 - OAuth2/JWT
 - Postgresql (production database)
-- Spring Security 
-- OAuth2/JWT
-- Bean validation
-- H2
-- Postgresql
+- Unit testing
+- Test coverage - JaCoCo
 
 
 
