@@ -13,7 +13,7 @@ public class UserFactory {
         return user;
     }
 
-    public static User adminClientUser() {
+    public static User createAdminUser() {
         User user = new User(2L, "Paola", "paola@gmail.com", "41999999999", LocalDate.parse("2002-09-11"), "$2a$10$TjmN4DAWkWJzYyTitqrPQeQKsxSbzponc7lzXNwDoj4pOQhkY5NI2");
         user.addRole(new Role(2L, "ROLE_ADMIN"));
         return user;
