@@ -94,6 +94,8 @@
 						<exclude>com/devfabricio/dscommerce/dto/**</exclude>
 						<exclude>com/devfabricio/dscommerce/controllers/handlers/**</exclude>
 						<exclude>com/devfabricio/dscommerce/services/exceptions/**</exclude>
+						<exclude>com/devfabricio/dscommerce/util/**</exclude>
+						<exclude>com/devfabricio/dscommerce/controllers/**</exclude>
 					</excludes>
 				</configuration>
 				<executions>
