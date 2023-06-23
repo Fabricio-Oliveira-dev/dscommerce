@@ -16,7 +16,6 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageImpl;
 import org.springframework.data.domain.PageRequest;
@@ -64,8 +63,12 @@ public class ProductServiceTests {
         Mockito.when(repository.getReferenceById(existingProductId)).thenReturn(product);
         Mockito.when(repository.getReferenceById(nonExistingProductId)).thenThrow(EntityNotFoundException.class);
 
+        Mockito.when(repository.existsById(existingProductId)).thenReturn(true);
+        Mockito.when(repository.existsById(dependentId)).thenReturn(true);
+        Mockito.when(repository.existsById(nonExistingProductId)).thenReturn(false);
+
         Mockito.doNothing().when(repository).deleteById(existingProductId);
-        Mockito.doThrow(EmptyResultDataAccessException.class).when(repository).deleteById(nonExistingProductId);
+        //Mockito.doThrow(EmptyResultDataAccessException.class).when(repository).deleteById(nonExistingProductId);
         Mockito.doThrow(DataIntegrityViolationException.class).when(repository).deleteById(dependentId);
     }
 

@@ -11,7 +11,6 @@ import com.devfabricio.dscommerce.services.exceptions.ResourceNotFoundException;
 import jakarta.persistence.EntityNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -27,7 +26,7 @@ public class ProductService {
     @Transactional(readOnly = true)
     public ProductDTO findById(Long id) {
         Product product = repository.findById(id).orElseThrow(
-                () -> new ResourceNotFoundException("Recurso não encontrado"));
+                () -> new ResourceNotFoundException("Resource not found"));
         return new ProductDTO(product);
     }
 
@@ -54,20 +53,20 @@ public class ProductService {
             return new ProductDTO(entity);
         }
         catch (EntityNotFoundException e) {
-            throw new ResourceNotFoundException("Recurso não encontrado");
+            throw new ResourceNotFoundException("Resource not found");
         }
     }
 
     @Transactional(propagation = Propagation.SUPPORTS)
     public void delete(Long id) {
+        if (!repository.existsById(id)) {
+            throw new ResourceNotFoundException("Resource not found");
+        }
         try {
             repository.deleteById(id);
         }
-        catch (EmptyResultDataAccessException e ){
-            throw new ResourceNotFoundException("Recurso não encontrado");
-        }
         catch (DataIntegrityViolationException e) {
-            throw new DatabaseException("Falha na integridade referencial");
+            throw new DatabaseException("Integrity violation");
         }
     }
 
